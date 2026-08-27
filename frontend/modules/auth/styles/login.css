@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cream: #fffaf8;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: var(--cream);
+}
+
+.login-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.login-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.login-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+@media (max-width: 850px) {
+    .login-page {
+        grid-template-columns: 1fr;
+    }
+
+    .login-visual {
+        min-height: 280px;
+    }
+
+    .login-section {
+        padding: 45px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-visual {
+        min-height: 230px;
+    }
+
+    .login-section {
+        padding: 35px 20px;
+    }
+}
