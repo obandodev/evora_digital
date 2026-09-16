@@ -1,0 +1,110 @@
+.product-confirm-modal{
+    position:fixed;
+    inset:0;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+}
+
+.product-confirm-modal[hidden]{
+    display:none;
+}
+
+.product-confirm-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(43,22,32,.58);
+    backdrop-filter:blur(3px);
+}
+
+.product-confirm-dialog{
+    position:relative;
+    z-index:1;
+    width:min(100%,460px);
+    padding:34px;
+    border:1px solid var(--border);
+    background:var(--white);
+    box-shadow:0 20px 60px rgba(43,22,32,.18);
+}
+
+.product-confirm-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:42px;
+    height:42px;
+    margin-bottom:22px;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    color:var(--gold);
+    font-family:var(--font-display);
+    font-size:22px;
+}
+
+.product-confirm-content h2{
+    margin:7px 0 10px;
+    color:var(--text);
+    font-family:var(--font-display);
+    font-size:30px;
+    font-weight:500;
+    line-height:1.05;
+}
+
+.product-confirm-content p{
+    margin:0;
+    color:var(--text-light);
+    font-size:14px;
+    line-height:1.6;
+}
+
+.product-confirm-actions{
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+    margin-top:30px;
+}
+
+.product-confirm-submit{
+    border:1px solid var(--wine);
+    background:var(--wine);
+    color:var(--white);
+}
+
+.product-confirm-submit:hover{
+    border-color:var(--wine-dark);
+    background:var(--wine-dark);
+}
+
+.product-confirm-submit.danger{
+    border-color:#9b3f3f;
+    background:#9b3f3f;
+}
+
+.product-confirm-submit.danger:hover{
+    border-color:#7f3030;
+    background:#7f3030;
+}
+
+body.product-confirm-open{
+    overflow:hidden;
+}
+
+@media(max-width:500px){
+    .product-confirm-modal{
+        padding:16px;
+    }
+
+    .product-confirm-dialog{
+        padding:26px 22px;
+    }
+
+    .product-confirm-actions{
+        flex-direction:column-reverse;
+    }
+
+    .product-confirm-actions button{
+        width:100%;
+    }
+}

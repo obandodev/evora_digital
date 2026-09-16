@@ -1,0 +1,3 @@
+uploads/products/*
+!uploads/products/.gitkeep
+backend/seed_admin.php

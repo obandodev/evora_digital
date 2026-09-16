@@ -1,0 +1,23 @@
+.inventory-section{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.inventory-section-title{
+    margin:0;
+    font-family:var(--font-display);
+    font-size:22px;
+    font-weight:500;
+}
+
+.inventory-form-hint{
+    margin:14px 0 0;
+    color:var(--text-light);
+    font-size:.78rem;
+}
+
+.inventory-stock-low{
+    color:#9b3f3f;
+    font-weight:600;
+}

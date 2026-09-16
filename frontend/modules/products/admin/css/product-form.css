@@ -1,0 +1,160 @@
+.product-modal{
+    position:fixed;
+    inset:0;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    background:rgba(43,22,32,.45);
+}
+
+.product-modal[hidden]{
+    display:none;
+}
+
+.product-modal-dialog{
+    width:min(760px,100%);
+    max-height:90vh;
+    overflow:auto;
+    background:var(--white);
+    border:1px solid var(--border);
+}
+
+.product-modal-header{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    padding:22px 24px;
+    border-bottom:1px solid var(--border);
+}
+
+.product-modal-header h2{
+    margin:4px 0 0;
+    color:var(--text);
+    font-family:var(--font-display);
+}
+
+.product-modal-close{
+    border:0;
+    background:transparent;
+    color:var(--text-light);
+    cursor:pointer;
+    font-size:28px;
+    line-height:1;
+}
+
+.product-modal-dialog form{
+    padding:24px;
+}
+
+.product-form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.product-form-field{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+
+.product-form-field-full{
+    grid-column:1 / -1;
+}
+
+.product-form-field label{
+    color:var(--text);
+    font-size:13px;
+    font-weight:600;
+}
+
+.product-form-field input,
+.product-form-field select,
+.product-form-field textarea{
+    box-sizing:border-box;
+    width:100%;
+    border:1px solid var(--border);
+    border-radius:5px;
+    background:var(--white);
+    color:var(--text);
+    font:inherit;
+    padding:10px 12px;
+}
+
+.product-form-field textarea{
+    resize:vertical;
+}
+
+.product-form-field input:disabled{
+    background:var(--soft-blush);
+    color:var(--text-light);
+    cursor:not-allowed;
+}
+
+.product-form-hint{
+    color:var(--text-light);
+    font-size:11px;
+}
+
+.product-form-field input:focus,
+.product-form-field select:focus,
+.product-form-field textarea:focus{
+    outline:none;
+    border-color:var(--wine);
+}
+
+.product-image-preview{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    margin-top:8px;
+}
+
+.product-image-preview img{
+    width:100px;
+    height:100px;
+    border:1px solid var(--border);
+    object-fit:cover;
+}
+
+.product-image-preview button{
+    border:0;
+    background:transparent;
+    color:#A33;
+    cursor:pointer;
+    font:inherit;
+    font-size:12px;
+}
+
+.product-form-message{
+    margin-top:18px;
+    padding:10px 12px;
+    background:var(--soft-blush);
+    color:var(--text);
+    font-size:13px;
+}
+
+.product-modal-actions{
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+    margin-top:24px;
+    padding-top:20px;
+    border-top:1px solid var(--border);
+}
+
+.modal-open{
+    overflow:hidden;
+}
+
+@media(max-width:700px){
+    .product-form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .product-form-field-full{
+        grid-column:auto;
+    }
+}

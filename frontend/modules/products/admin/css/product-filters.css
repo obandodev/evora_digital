@@ -1,0 +1,36 @@
+.product-filters{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr auto;
+    gap:14px;
+    align-items:end;
+}
+
+.product-filter-group{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+
+.product-filter-group label{
+    color:var(--text);
+    font-size:13px;
+    font-weight:600;
+}
+
+.product-filter-group input,
+.product-filter-group select{
+    width:100%;
+    box-sizing:border-box;
+    border:1px solid var(--border);
+    border-radius:5px;
+    background:var(--white);
+    color:var(--text);
+    font:inherit;
+    padding:11px 12px;
+}
+
+.product-filter-group input:focus,
+.product-filter-group select:focus{
+    outline:none;
+    border-color:var(--wine);
+}
