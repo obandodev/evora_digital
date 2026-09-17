@@ -1,0 +1,52 @@
+.brand-section{
+    display:grid;
+    grid-template-columns:80px 1.5fr 1fr;
+    gap:45px;
+    padding:100px clamp(25px,7vw,110px);
+    background:var(--wine);
+    color:#fff;
+}
+
+.brand-section-number{
+    color:var(--gold);
+    font-family:var(--font-display);
+    font-size:1.4rem;
+}
+
+.brand-section h2{
+    margin:10px 0 0;
+    font-family:var(--font-display);
+    font-size:clamp(2.8rem,4vw,4.2rem);
+    line-height:.95;
+    font-weight:500;
+}
+
+.brand-section h2 em{
+    color:var(--gold);
+    font-weight:400;
+}
+
+.brand-section-copy{
+    align-self:end;
+    max-width:390px;
+}
+
+.brand-section p{
+    margin:0 0 25px;
+    color:rgba(255,255,255,.75);
+    line-height:1.8;
+}
+
+.brand-link{
+    color:#fff;
+    font-size:.7rem;
+    font-weight:600;
+    text-decoration:none;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+}
+
+.brand-link:hover{
+    color:var(--gold);
+}
+

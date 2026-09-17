@@ -8,7 +8,7 @@ require_once __DIR__ . '/config/Database.php';
 
 $name = 'Admin';
 $email = 'admin@glambeauty.com';
-$password = 'admin1234'; // CAMBIA esta contraseña después del primer login
+$password = 'Admin123'; // CAMBIA esta contraseña después del primer login
 
 $db = Database::getConnection();
 

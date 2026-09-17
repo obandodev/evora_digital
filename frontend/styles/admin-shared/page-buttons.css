@@ -1,0 +1,130 @@
+.admin-page{
+    display:flex;
+    flex-direction:column;
+    gap:28px;
+    padding:48px 45px 80px;
+}
+
+.admin-page .admin-page-header{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:30px;
+    margin:0;
+}
+
+.admin-page-heading{
+    min-width:0;
+}
+
+.admin-page .admin-page-header h1{
+    margin:6px 0 8px;
+    color:var(--text);
+    font-family:var(--font-display);
+    font-size:42px;
+    font-weight:500;
+    line-height:1;
+}
+
+.admin-page .admin-page-header p{
+    margin:0;
+    color:var(--text-light);
+    font-size:14px;
+}
+
+.admin-page-eyebrow{
+    color:var(--wine);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+}
+
+.admin-button{
+    border:1px solid transparent;
+    border-radius:4px;
+    cursor:pointer;
+    font:inherit;
+    padding:11px 18px;
+}
+
+.admin-button-primary{
+    flex-shrink:0;
+    min-width:150px;
+    background:var(--wine);
+    color:var(--white);
+    font-weight:600;
+    transition:background .2s ease,transform .2s ease;
+}
+
+.admin-button-primary:hover{
+    background:var(--wine-dark);
+    transform:translateY(-1px);
+}
+
+.admin-button-secondary{
+    background:var(--white);
+    border-color:var(--border);
+    color:var(--text);
+}
+
+.admin-button-secondary:hover{
+    border-color:var(--wine);
+    color:var(--wine);
+}
+
+.admin-message{
+    padding:12px 16px;
+    border:1px solid var(--border);
+    background:var(--soft-blush);
+    color:var(--text);
+    font-size:13px;
+}
+
+.admin-message.error{
+    border-color:#b85b5b;
+    background:#fff5f5;
+    color:#9b3f3f;
+}
+
+.admin-message.success{
+    border-color:#5e9b72;
+    background:#f2f8f4;
+    color:#356b47;
+}
+
+.admin-filters{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:end;
+    gap:15px;
+    width:100%;
+    padding:22px 24px;
+    box-sizing:border-box;
+    border:1px solid var(--border);
+    background:var(--white);
+}
+
+.admin-filter-group{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    min-width:160px;
+}
+
+.admin-filter-group label{
+    color:var(--text-light);
+    font-size:.7rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+}
+
+.admin-filter-group input,
+.admin-filter-group select{
+    padding:11px 12px;
+    border:1px solid var(--border);
+    background:var(--white);
+    font:inherit;
+    font-size:.85rem;
+}
+

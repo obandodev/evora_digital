@@ -1,0 +1,116 @@
+.admin-body{
+    min-height:100vh;
+    background:var(--blush);
+}
+
+.admin-layout{
+    display:flex;
+    min-height:100vh;
+}
+
+.admin-sidebar{
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    z-index:200;
+    display:flex;
+    flex-direction:column;
+    width:250px;
+    padding:30px 22px;
+    background:var(--text);
+    color:#fff;
+}
+
+.admin-brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:0 8px 35px;
+    border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.admin-brand .brand-mark{
+    flex:none;
+    border-color:var(--gold);
+    color:var(--gold);
+}
+
+.admin-brand strong{
+    display:block;
+    font-family:var(--font-display);
+    font-size:1.1rem;
+    font-weight:500;
+}
+
+.admin-brand span:last-child{
+    display:block;
+    margin-top:3px;
+    color:rgba(255,255,255,.5);
+    font-size:.65rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+}
+
+.admin-nav{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    padding-top:30px;
+}
+
+.admin-nav-label{
+    margin:0 8px 12px;
+    color:rgba(255,255,255,.35);
+    font-size:.62rem;
+    letter-spacing:.15em;
+}
+
+.admin-nav-link{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    padding:13px 8px;
+    color:rgba(255,255,255,.65);
+    font-size:.8rem;
+    transition:all .2s ease;
+}
+
+.admin-nav-link span{
+    width:22px;
+    color:var(--gold);
+    font-family:var(--font-display);
+    font-size:.75rem;
+}
+
+.admin-nav-link:hover,
+.admin-nav-link.active{
+    color:#fff;
+    background:rgba(255,255,255,.06);
+}
+
+.admin-sidebar-bottom{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    margin-top:auto;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.12);
+}
+
+.admin-exit-link,
+.admin-logout{
+    padding:11px 8px;
+    border:0;
+    background:none;
+    color:rgba(255,255,255,.55);
+    text-align:left;
+    font:inherit;
+    font-size:.75rem;
+}
+
+.admin-exit-link:hover,
+.admin-logout:hover{
+    color:#fff;
+}
+

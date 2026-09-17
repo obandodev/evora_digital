@@ -1,0 +1,55 @@
+@media(max-width:1000px){
+    .admin-page{
+        padding:40px 30px 70px;
+    }
+
+    .admin-page .admin-page-header h1{
+        font-size:36px;
+    }
+}
+
+@media(max-width:750px){
+    .admin-page{
+        gap:22px;
+        padding:32px 20px 60px;
+    }
+
+    .admin-page .admin-page-header{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .admin-button-primary{
+        width:100%;
+    }
+
+    .admin-filters{
+        padding:18px;
+    }
+
+    .admin-form-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:500px){
+    .admin-page .admin-page-header h1{
+        font-size:32px;
+    }
+
+    .admin-modal-dialog,
+    .admin-confirm-dialog{
+        padding:26px 22px;
+    }
+
+    .admin-confirm-actions,
+    .admin-modal-actions{
+        flex-direction:column-reverse;
+    }
+
+    .admin-confirm-actions button,
+    .admin-modal-actions button{
+        width:100%;
+    }
+}

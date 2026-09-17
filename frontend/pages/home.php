@@ -8,7 +8,7 @@ require_once __DIR__ . '/../components/header.php';
 <main class="home-page">
     <section class="hero">
         <div class="hero-content">
-            <span class="eyebrow">GLAM BEAUTY / 01</span>
+            <span class="eyebrow">GLAM BEAUTY</span>
             <h1>Belleza que<br><em>habla por ti.</em></h1>
             <p>Descubre maquillaje seleccionado para resaltar tu estilo, experimentar con el color y hacer de cada look algo completamente tuyo.</p>
             <div class="hero-actions">
@@ -36,7 +36,7 @@ require_once __DIR__ . '/../components/header.php';
     <section class="featured-section" id="featured">
         <div class="section-heading">
             <div>
-                <span class="eyebrow">SELECCIÓN GLAM / 02</span>
+                <span class="eyebrow">SELECCIÓN GLAM</span>
                 <h2>Favoritos de la tienda</h2>
             </div>
             <a href="catalog.php" class="text-link">Ver catálogo <span>→</span></a>
@@ -48,8 +48,7 @@ require_once __DIR__ . '/../components/header.php';
     </section>
 
     <section class="brand-section">
-        <div class="brand-section-number">03</div>
-
+        <div class="brand-section-number"></div>
         <div class="brand-section-main">
             <span class="eyebrow">TU ESTILO</span>
             <h2>Encuentra productos<br>que se sientan <em>como tú.</em></h2>

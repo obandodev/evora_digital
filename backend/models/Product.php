@@ -1,4 +1,5 @@
 <?php
+
 require_once __DIR__ . '/../config/Database.php';
 
 class Product
@@ -21,7 +22,8 @@ class Product
                 FROM products p
                 JOIN categories c ON c.id = p.category_id
                 LEFT JOIN inventory i ON i.product_id = p.id
-                WHERE 1=1';
+                WHERE 1=1
+                AND p.deleted_at IS NULL';
 
         $params = [];
 
@@ -63,7 +65,8 @@ class Product
     {
         $sql = 'SELECT COUNT(*) AS total
                 FROM products p
-                WHERE 1=1';
+                WHERE 1=1
+                AND p.deleted_at IS NULL';
 
         $params = [];
 
@@ -97,14 +100,15 @@ class Product
         $stmt = $this->db->prepare(
             'SELECT p.*, c.name AS category_name, i.stock, i.minimum_stock,
                     (SELECT image_path
-                    FROM product_images pi
-                    WHERE pi.product_id = p.id
-                    ORDER BY pi.is_primary DESC, pi.id ASC
-                    LIMIT 1) AS main_image
-            FROM products p
-            JOIN categories c ON c.id = p.category_id
-            LEFT JOIN inventory i ON i.product_id = p.id
-            WHERE p.id = :id'
+                     FROM product_images pi
+                     WHERE pi.product_id = p.id
+                     ORDER BY pi.is_primary DESC, pi.id ASC
+                     LIMIT 1) AS main_image
+             FROM products p
+             JOIN categories c ON c.id = p.category_id
+             LEFT JOIN inventory i ON i.product_id = p.id
+             WHERE p.id = :id
+             AND p.deleted_at IS NULL'
         );
 
         $stmt->execute(['id' => $id]);
@@ -204,5 +208,14 @@ class Product
         $row = $stmt->fetch();
 
         return $row ? (float) $row['price'] : null;
+    }
+
+    public function softDelete(int $id): bool
+    {
+        $stmt = $this->db->prepare(
+            'UPDATE products SET deleted_at = NOW() WHERE id = :id'
+        );
+
+        return $stmt->execute(['id' => $id]);
     }
 }

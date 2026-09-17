@@ -291,29 +291,26 @@ class ProductController
         try {
             $this->model->delete($productId);
 
-            Response::success(
-                null,
-                'Producto eliminado correctamente'
-            );
+            Response::success(null, 'Producto eliminado correctamente');
         } catch (PDOException $e) {
             if ($e->getCode() === '23000') {
-                Response::error(
-                    'No se puede eliminar: el producto tiene pedidos asociados. Márcalo como inactivo en su lugar.',
-                    409
+                // Tiene pedidos asociados: se conserva el registro
+                // pero se oculta de todos lados (soft delete).
+                $this->model->softDelete($productId);
+
+                Response::success(
+                    null,
+                    'Producto eliminado. Se conservó su historial de pedidos.'
                 );
+
+                return;
             }
 
-            error_log(
-                'Product delete error: ' . $e->getMessage()
-            );
+            error_log('Product delete error: ' . $e->getMessage());
 
-            Response::error(
-                'Error al eliminar el producto',
-                500
-            );
+            Response::error('Error al eliminar el producto', 500);
         }
     }
-
     public function deleteImage(string $productId, string $imageId): void
     {
         AuthMiddleware::handle();

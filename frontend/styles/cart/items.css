@@ -1,0 +1,114 @@
+.cart-page{
+    min-height:70vh;
+}
+.cart-header{
+    padding:80px 6vw 65px;
+    background:var(--soft-blush);
+}
+.cart-header h1{
+    margin:12px 0;
+    font-family:var(--font-display);
+    font-size:clamp(4rem,7vw,6rem);
+    line-height:.9;
+    font-weight:500;
+}
+.cart-header p{
+    margin:0;
+    color:var(--text-light);
+}
+.cart-content{
+    padding:65px 6vw 100px;
+}
+.cart-layout{
+    display:grid;
+    grid-template-columns:1fr 360px;
+    gap:70px;
+    max-width:1300px;
+    margin:0 auto;
+}
+.cart-items{
+    min-width:0;
+}
+.cart-item{
+    display:grid;
+    grid-template-columns:130px 1fr 100px 130px;
+    gap:25px;
+    align-items:center;
+    padding:25px 0;
+    border-bottom:1px solid var(--border);
+}
+.cart-item:first-child{
+    padding-top:0;
+}
+.cart-item-image{
+    display:block;
+    width:130px;
+    height:160px;
+    background:var(--soft-blush);
+    overflow:hidden;
+}
+.cart-item-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+.cart-item-info h2{
+    margin:6px 0 10px;
+    font-family:var(--font-display);
+    font-size:1.45rem;
+    font-weight:500;
+}
+.cart-item-color{
+    display:block;
+    margin-bottom:10px;
+    color:var(--text-light);
+    font-size:.8rem;
+}
+.cart-item-price{
+    color:var(--wine);
+    font-size:.9rem;
+}
+.cart-item-quantity{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+.cart-item-quantity label{
+    color:var(--text-light);
+    font-size:.7rem;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+}
+.quantity-input{
+    width:75px;
+    height:42px;
+    padding:0 10px;
+    border:1px solid var(--border);
+    background:#fff;
+    color:var(--text);
+    font:inherit;
+}
+.cart-item-subtotal{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:12px;
+}
+.cart-item-subtotal strong{
+    color:var(--wine);
+}
+.remove-item,
+.cart-clear{
+    padding:0;
+    border:0;
+    background:none;
+    color:var(--text-light);
+    font-size:.75rem;
+}
+.remove-item:hover,
+.cart-clear:hover{
+    color:var(--wine);
+}
+.cart-actions{
+    padding-top:25px;
+}
