@@ -1,5 +1,6 @@
 .login-page{
-    min-height:calc(100vh - 78px);
+    min-height:100vh;
+    min-height:100dvh;
     display:flex;
     align-items:center;
     padding:70px 6vw;
@@ -19,9 +20,11 @@
 .login-intro h1{
     margin:15px 0 25px;
     font-family:var(--font-display);
-    font-size:clamp(4rem,7vw,6.5rem);
-    line-height:.85;
+    font-size:clamp(2.6rem,3.2vw,4rem);
+    line-height:.95;
     font-weight:500;
+    overflow-wrap:break-word;
+    word-break:break-word;
 }
 .login-intro p{
     max-width:430px;
@@ -90,6 +93,34 @@
     background:#fff5f5;
     color:#9b3f3f;
 }
+
+.login-button{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+}
+.login-button-spinner{
+    display:none;
+    width:18px;
+    height:18px;
+    border:2px solid rgba(255,255,255,.4);
+    border-top-color:#fff;
+    border-radius:50%;
+    animation:login-spin .7s linear infinite;
+}
+.login-button.is-loading .login-button-text{
+    opacity:.75;
+}
+.login-button.is-loading .login-button-spinner{
+    display:inline-block;
+}
+
+@keyframes login-spin{
+    to{ transform:rotate(360deg); }
+}
+
 @media(max-width:800px){
     .login-container{
         grid-template-columns:1fr;
@@ -102,8 +133,12 @@
 @media(max-width:500px){
     .login-page{
         padding:45px 20px;
+        overflow-x:hidden;
     }
     .login-form{
         padding:25px;
+    }
+    .login-intro h1{
+        font-size:2.6rem;
     }
 }

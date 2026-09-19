@@ -13,7 +13,6 @@ async function checkSession() {
         await AuthAPI.me();
         window.location.href = '/glam-beauty/frontend/modules/products/admin/pages/admin/dashboard.php';
     } catch {
-        // No hay sesión activa.
     }
 }
 
@@ -22,6 +21,7 @@ async function handleLogin(event) {
 
     const form = event.currentTarget;
     const button = form.querySelector('.login-button');
+    const buttonText = button.querySelector('.login-button-text');
     const message = document.getElementById('login-message');
 
     const email = document
@@ -37,7 +37,8 @@ async function handleLogin(event) {
     message.textContent = '';
 
     button.disabled = true;
-    button.textContent = 'Ingresando...';
+    button.classList.add('is-loading');
+    buttonText.textContent = 'Ingresando...';
 
     try {
         await AuthAPI.login(email, password);
@@ -49,6 +50,7 @@ async function handleLogin(event) {
         message.textContent = error.message || 'Credenciales incorrectas.';
 
         button.disabled = false;
-        button.textContent = 'Ingresar';
+        button.classList.remove('is-loading');
+        buttonText.textContent = 'Ingresar';
     }
 }

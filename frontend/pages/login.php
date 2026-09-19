@@ -58,7 +58,8 @@ require_once __DIR__ . '/../components/header.php';
                 type="submit"
                 class="btn btn-primary login-button"
             >
-                Ingresar
+                <span class="login-button-text">Ingresar</span>
+                <span class= "login-button-spinner" aria-hidden="true"></span>
             </button>
         </form>
     </section>

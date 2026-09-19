@@ -24,6 +24,8 @@
     font-weight:500;
     letter-spacing:-.045em;
     color:var(--text);
+    overflow-wrap:break-word;
+    word-break:break-word;
 }
 
 .hero h1 em{
