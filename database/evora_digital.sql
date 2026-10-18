@@ -1,14 +1,14 @@
 -- =========================================================
--- GLAM BEAUTY
+-- E'vora Digital
 -- Base de datos para tienda virtual de productos de maquillaje
 -- PHP + MySQL/MariaDB
 -- =========================================================
 
-CREATE DATABASE IF NOT EXISTS glam_beauty
+CREATE DATABASE IF NOT EXISTS evora_digital
 CHARACTER SET utf8mb4
 COLLATE utf8mb4_unicode_ci;
 
-USE glam_beauty;
+USE evora_digital;
 
 -- =========================================================
 -- 1. USERS
@@ -26,17 +26,30 @@ CREATE TABLE users (
 ) ENGINE=InnoDB;
 
 -- =========================================================
--- 2. CATEGORIES
+-- 2. CATEGORIES (categorías y subcategorías, 2 niveles)
+--    parent_id NULL  -> categoría principal (ej. Maquillaje)
+--    parent_id = X   -> subcategoría de X (ej. Labios)
 -- =========================================================
 
 CREATE TABLE categories (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    parent_id INT UNSIGNED NULL,
+    -- Columna calculada: permite que el nombre sea único por padre,
+    -- incluso entre categorías principales (donde parent_id es NULL).
+    parent_key INT UNSIGNED GENERATED ALWAYS AS (IFNULL(parent_id, 0)) STORED,
     name VARCHAR(100) NOT NULL,
     description VARCHAR(255) NULL,
     status ENUM('ACTIVE', 'INACTIVE') NOT NULL DEFAULT 'ACTIVE',
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    UNIQUE KEY uk_categories_name (name)
+
+    CONSTRAINT fk_categories_parent FOREIGN KEY (parent_id)
+        REFERENCES categories(id)
+        ON UPDATE RESTRICT
+        ON DELETE RESTRICT,
+
+    UNIQUE KEY uk_categories_parent_name (parent_key, name),
+    INDEX idx_categories_parent (parent_id)
 ) ENGINE=InnoDB;
 
 -- =========================================================
