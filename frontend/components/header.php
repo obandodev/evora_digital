@@ -7,6 +7,14 @@ require_once __DIR__ . '/../config/app.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        window.GLAM = <?= json_encode([
+            'BASE_URL'     => GLAM_BASE_URL,
+            'FRONTEND_URL' => GLAM_FRONTEND_URL,
+            'API_URL'      => GLAM_API_URL,
+            'IMAGE_URL'    => GLAM_IMAGE_URL,
+        ], JSON_UNESCAPED_SLASHES) ?>;
+    </script>
     <title>Glam Beauty</title>
 
     <link rel="stylesheet" href="<?= GLAM_FRONTEND_URL ?>/styles/global.css">

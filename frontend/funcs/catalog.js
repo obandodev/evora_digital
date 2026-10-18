@@ -102,7 +102,7 @@ async function loadProducts() {
 
 function renderProduct(product) {
     const image = product.main_image
-        ? `/glam-beauty/backend/uploads/products/${product.main_image}`
+        ? `${window.GLAM.IMAGE_URL}/${product.main_image}`
         : '';
 
     return `

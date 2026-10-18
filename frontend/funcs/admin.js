@@ -1,6 +1,6 @@
 import { AuthAPI } from '../api/authApi.js';
 
-const LOGIN_URL = '/glam-beauty/frontend/pages/login.php';
+const LOGIN_URL = `${window.GLAM.FRONTEND_URL}/pages/login.php`;
 
 document.addEventListener('DOMContentLoaded', checkAdminSession);
 

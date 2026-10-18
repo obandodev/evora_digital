@@ -1,4 +1,4 @@
-const API_BASE = '/glam-beauty/backend/api';
+const API_BASE = window.GLAM.API_URL;
 
 async function request(path, options = {}) {
     const config = {

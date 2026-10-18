@@ -23,9 +23,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         container.innerHTML = products.map(product => {
             const image = product.main_image
-                ? `/glam-beauty/backend/uploads/products/${product.main_image}`
+                ? `${window.GLAM.IMAGE_URL}/${product.main_image}`
                 : '';
-
             return `
                 <article class="product-preview">
                     <a href="product.php?id=${product.id}" class="product-preview-image">

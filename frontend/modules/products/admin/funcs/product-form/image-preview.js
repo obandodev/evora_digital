@@ -102,5 +102,5 @@ export function getProductImage(product) {
         return image;
     }
 
-    return `/glam-beauty/backend/uploads/products/${image.split('/').pop()}`;
+    sreturn `${window.GLAM.IMAGE_URL}/${image.split('/').pop()}`;
 }

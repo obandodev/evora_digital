@@ -129,7 +129,7 @@ export function renderCheckoutForm(cart) {
 
 function renderCheckoutItem(item) {
     const image = item.image
-        ? `/glam-beauty/backend/uploads/products/${item.image}`
+        ? `${window.GLAM.IMAGE_URL}/${item.image}`
         : '';
 
     const subtotal = Number(item.price) * Number(item.quantity);

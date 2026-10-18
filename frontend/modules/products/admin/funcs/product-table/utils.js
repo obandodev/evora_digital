@@ -34,7 +34,7 @@ export function getProductImage(product) {
         return image;
     }
 
-    return `/glam-beauty/backend/uploads/products/${image.split('/').pop()}`;
+    return `${window.GLAM.IMAGE_URL}/${image.split('/').pop()}`;
 }
 
 export function normalizeStatus(status) {

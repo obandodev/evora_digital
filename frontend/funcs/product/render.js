@@ -22,7 +22,7 @@ export function renderProduct(
 
     const mainImage=
         primaryImagePath
-            ?`/glam-beauty/backend/uploads/products/${primaryImagePath}`
+            ? `${window.GLAM.IMAGE_URL}/${item.image}`
             :'';
 
     const stock=
@@ -58,10 +58,10 @@ export function renderProduct(
                                         <button
                                             type="button"
                                             class="product-thumbnail"
-                                            data-image="/glam-beauty/backend/uploads/products/${image.image_path}"
+                                            data-image="${window.GLAM.IMAGE_URL}/${image.image_path}"
                                         >
                                             <img
-                                                src="/glam-beauty/backend/uploads/products/${image.image_path}"
+                                                src="${window.GLAM.IMAGE_URL}/${image.image_path}"
                                                 alt="${escapeHtml(product.name)}"
                                             >
                                         </button>

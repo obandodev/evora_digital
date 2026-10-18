@@ -2,7 +2,7 @@ import { formatPrice } from '../cart.js';
 
 export function renderCartItem(item){
     const image=item.image
-        ?`/glam-beauty/backend/uploads/products/${item.image}`
+        ?`${window.GLAM.IMAGE_URL}/${item.image}`
         :'';
 
     const subtotal=

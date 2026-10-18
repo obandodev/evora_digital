@@ -14,7 +14,15 @@ define('SESSION_LIFETIME', 3600); // 1 hora
 
 // Rutas de subida de archivos
 define('UPLOAD_DIR', __DIR__ . '/../uploads/products/');
-define('UPLOAD_URL', '/glam-beauty/backend/uploads/products/');
+
+$glamDocRoot = rtrim(str_replace('\\', '/', realpath($_SERVER['DOCUMENT_ROOT'] ?? '') ?: ''), '/');
+$glamBackendDir = str_replace('\\', '/', realpath(__DIR__ . '/..'));
+$glamBackendUrl = ($glamDocRoot !== '' && stripos($glamBackendDir, $glamDocRoot) === 0)
+    ? substr($glamBackendDir, strlen($glamDocRoot))
+    : '';
+define('UPLOAD_URL', $glamBackendUrl . '/uploads/products/');
+unset($glamDocRoot, $glamBackendDir, $glamBackendUrl);
+
 define('MAX_UPLOAD_SIZE', 3 * 1024 * 1024); // 3MB
 define('ALLOWED_IMAGE_TYPES', ['image/jpeg', 'image/png', 'image/webp']);
 

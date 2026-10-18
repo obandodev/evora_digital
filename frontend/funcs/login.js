@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function checkSession() {
     try {
         await AuthAPI.me();
-        window.location.href = '/glam-beauty/frontend/modules/products/admin/pages/admin/dashboard.php';
+        window.location.href = `${window.GLAM.FRONTEND_URL}/modules/products/admin/pages/admin/dashboard.php`;
     } catch {
     }
 }
@@ -43,7 +43,7 @@ async function handleLogin(event) {
     try {
         await AuthAPI.login(email, password);
 
-        window.location.href = '/glam-beauty/frontend/modules/products/admin/pages/admin/dashboard.php';
+        window.location.href = `${window.GLAM.FRONTEND_URL}/modules/products/admin/pages/admin/dashboard.php`;
     } catch (error) {
         message.hidden = false;
         message.className = 'login-message error';

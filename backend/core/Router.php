@@ -28,8 +28,8 @@ class Router
         $method = $_SERVER['REQUEST_METHOD'];
         $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-        // Ajusta este prefijo según cómo montes el proyecto en tu htdocs
-        $basePath = '/glam-beauty/backend/api';
+        // Prefijo calculado automáticamente (funciona con cualquier nombre de carpeta)
+        $basePath = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'])), '/');
         $uri = substr($uri, strlen($basePath));
         $uri = '/' . trim($uri, '/');
 
