@@ -13,10 +13,15 @@ export function renderTable() {
 
     tbody.innerHTML = state.categories.map(category => {
         const isActive = String(category.status || '').toUpperCase() === 'ACTIVE';
+        const isChild = Boolean(category.parent_id);
+
+        const nameCell = isChild
+            ? `<td style="padding-left: 36px;">↳ ${escapeHtml(category.name)}</td>`
+            : `<td><strong>${escapeHtml(category.name)}</strong></td>`;
 
         return `
             <tr>
-                <td>${escapeHtml(category.name)}</td>
+                ${nameCell}
                 <td>${escapeHtml(category.description || '—')}</td>
                 <td>
                     <span class="admin-status ${isActive ? 'active' : 'inactive'}">

@@ -91,8 +91,9 @@ export function renderProduct(
 
             <p class="product-category">
                 ${escapeHtml(
-                    product.category_name||
-                    ''
+                    [product.parent_category_name, product.category_name]
+                        .filter(Boolean)
+                        .join(' · ')
                 )}
             </p>
 

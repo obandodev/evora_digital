@@ -21,7 +21,7 @@
 }
 .catalog-filters{
     display:grid;
-    grid-template-columns:2fr 1fr 1fr auto;
+    grid-template-columns:2fr 1fr 1fr 1fr auto;
     gap:15px;
     align-items:end;
     margin-bottom:55px;
@@ -54,6 +54,12 @@
 .filter-group select:focus{
     border-color:var(--wine);
 }
+.filter-group select:disabled{
+    background:#f6f3f1;
+    color:var(--text-light);
+    cursor:not-allowed;
+}
+
 .catalog-products{
     display:grid;
     grid-template-columns:repeat(4,1fr);

@@ -3,6 +3,7 @@ import { CategoryAPI } from '../api/categoryApi.js';
 import { formatPrice } from './cart.js';
 
 let currentPage = 1;
+let allCategories = [];
 const limit = 12;
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -13,6 +14,22 @@ document.addEventListener('DOMContentLoaded', async () => {
         .getElementById('catalog-filters')
         ?.addEventListener('submit', event => {
             event.preventDefault();
+            currentPage = 1;
+            loadProducts();
+        });
+
+    // Al elegir una categoría se cargan sus subcategorías y se filtra
+    document
+        .getElementById('category-filter')
+        ?.addEventListener('change', event => {
+            renderSubcategories(event.target.value);
+            currentPage = 1;
+            loadProducts();
+        });
+
+    document
+        .getElementById('subcategory-filter')
+        ?.addEventListener('change', () => {
             currentPage = 1;
             loadProducts();
         });
@@ -27,19 +44,49 @@ async function loadCategories() {
 
     try {
         const response = await CategoryAPI.list();
-        const categories = response.data || [];
+        allCategories = response.data || [];
+
+        // Solo categorías principales en el primer select
+        const parents = allCategories.filter(category => !category.parent_id);
 
         select.innerHTML = `
             <option value="">Todas las categorías</option>
-            ${categories.map(category => `
+            ${parents.map(category => `
                 <option value="${category.id}">
                     ${escapeHtml(category.name)}
                 </option>
             `).join('')}
         `;
+
+        renderSubcategories('');
     } catch (error) {
         console.error('Error cargando categorías:', error);
     }
+}
+
+function renderSubcategories(parentId) {
+    const select = document.getElementById('subcategory-filter');
+
+    if (!select) {
+        return;
+    }
+
+    const children = parentId
+        ? allCategories.filter(
+            category => String(category.parent_id) === String(parentId)
+        )
+        : [];
+
+    select.innerHTML = `
+        <option value="">Todas las subcategorías</option>
+        ${children.map(category => `
+            <option value="${category.id}">
+                ${escapeHtml(category.name)}
+            </option>
+        `).join('')}
+    `;
+
+    select.disabled = children.length === 0;
 }
 
 async function loadProducts() {
@@ -51,8 +98,13 @@ async function loadProducts() {
     }
 
     const search = document.getElementById('search-filter')?.value.trim() || '';
-    const categoryId = document.getElementById('category-filter')?.value || '';
+    const category = document.getElementById('category-filter')?.value || '';
+    const subcategory = document.getElementById('subcategory-filter')?.value || '';
     const brand = document.getElementById('brand-filter')?.value.trim() || '';
+
+    // Si hay subcategoría se filtra por ella; si no, por la categoría
+    // (el backend incluye los productos de sus subcategorías)
+    const categoryId = subcategory || category;
 
     container.innerHTML = '<p class="loading-message">Cargando productos...</p>';
 
@@ -100,6 +152,12 @@ async function loadProducts() {
     }
 }
 
+function categoryLabel(product) {
+    return [product.parent_category_name, product.category_name]
+        .filter(Boolean)
+        .join(' · ');
+}
+
 function renderProduct(product) {
     const image = product.main_image
         ? `${window.GLAM.IMAGE_URL}/${product.main_image}`
@@ -126,7 +184,7 @@ function renderProduct(product) {
                 </h3>
 
                 <p class="product-category">
-                    ${escapeHtml(product.category_name || '')}
+                    ${escapeHtml(categoryLabel(product))}
                 </p>
 
                 <strong>${formatPrice(product.price)}</strong>

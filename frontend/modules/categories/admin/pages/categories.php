@@ -73,6 +73,14 @@ require_once __DIR__ . '/../../../../components/admin-header.php';
                         name="name"
                         required>
                 </div>
+                
+                <div class="admin-form-field admin-form-field-full">
+                    <label for="category-parent">Categoría padre</label>
+                    <select id="category-parent" name="parent_id">
+                        <option value="">Ninguna (categoría principal)</option>
+                    </select>
+                    <small id="category-parent-hint" hidden></small>
+                </div>
 
                 <div class="admin-form-field admin-form-field-full">
                     <label for="category-description">Descripción</label>

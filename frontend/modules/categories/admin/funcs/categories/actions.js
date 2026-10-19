@@ -19,6 +19,7 @@ export function handleToggle(category) {
         action: async () => {
             try {
                 await CategoryAPI.update(category.id, {
+                    parent_id: category.parent_id || null,
                     name: category.name,
                     description: category.description,
                     status: newStatus

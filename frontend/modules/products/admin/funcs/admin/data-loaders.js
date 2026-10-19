@@ -1,5 +1,6 @@
 import { ProductAPI } from '../../../../../api/productApi.js';
 import { CategoryAPI } from '../../../../../api/categoryApi.js';
+import { buildCategoryOptions } from '../category-options.js';
 
 import {
     getProductFilters
@@ -85,14 +86,10 @@ function renderCategoryFilter(categories) {
 
     const currentValue = select.value;
 
-    select.innerHTML = `
-        <option value="">Todas las categorías</option>
-        ${categories.map(category => `
-            <option value="${escapeHtml(category.id)}">
-                ${escapeHtml(category.name)}
-            </option>
-        `).join('')}
-    `;
+    select.innerHTML = buildCategoryOptions(categories, {
+        placeholder: 'Todas las categorías',
+        parentSuffix: 'todas'
+    });
 
     if (
         currentValue &&

@@ -29,7 +29,11 @@ export function renderProductRow(product) {
             </td>
 
             <td>
-                ${escapeHtml(product.category_name || 'Sin categoría')}
+                ${escapeHtml(
+                    [product.parent_category_name, product.category_name]
+                        .filter(Boolean)
+                        .join(' · ') || 'Sin categoría'
+                )}
             </td>
 
             <td>

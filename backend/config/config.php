@@ -1,7 +1,7 @@
 <?php
 // Variables de entorno básicas (en producción, mover a .env real)
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'glam_beauty');
+define('DB_NAME', 'evora_digital');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_CHARSET', 'utf8mb4');
@@ -9,7 +9,7 @@ define('DB_CHARSET', 'utf8mb4');
 define('APP_ENV', 'development'); // development | production
 
 // Configuración de sesión (antes de cualquier session_start())
-define('SESSION_NAME', 'glam_beauty_admin');
+define('SESSION_NAME', 'evora_digital_admin');
 define('SESSION_LIFETIME', 3600); // 1 hora
 
 // Rutas de subida de archivos

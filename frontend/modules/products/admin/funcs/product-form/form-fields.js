@@ -1,5 +1,6 @@
 import { getProductImage, showPreview, removePreview } from './image-preview.js';
 import { clearMessage } from './modal.js';
+import { buildCategoryOptions } from '../category-options.js';
 
 export function renderCategorySelect(categoryList = []) {
     const select =
