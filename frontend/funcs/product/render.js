@@ -22,7 +22,7 @@ export function renderProduct(
 
     const mainImage=
         primaryImagePath
-            ? `${window.GLAM.IMAGE_URL}/${item.image}`
+            ? `${window.GLAM.IMAGE_URL}/${primaryImagePath}`
             :'';
 
     const stock=
