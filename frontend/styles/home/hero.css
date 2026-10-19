@@ -150,3 +150,11 @@
     left:45px;
 }
 
+/* Logo que reemplaza la caja vino */
+.hero-product-logo{
+    display:block;
+    width:clamp(230px,28vw,340px);
+    height:auto;
+    border:1px solid rgba(255,255,255,.6);
+    box-shadow:25px 30px 45px rgba(74,28,43,.2);
+}

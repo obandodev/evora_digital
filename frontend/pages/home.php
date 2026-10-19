@@ -8,7 +8,7 @@ require_once __DIR__ . '/../components/header.php';
 <main class="home-page">
     <section class="hero">
         <div class="hero-content">
-            <span class="eyebrow">GLAM BEAUTY</span>
+            <span class="eyebrow">E'vora Digital</span>
             <h1>Belleza que<br><em>habla por ti.</em></h1>
             <p>Descubre maquillaje seleccionado para resaltar tu estilo, experimentar con el color y hacer de cada look algo completamente tuyo.</p>
             <div class="hero-actions">
@@ -23,11 +23,9 @@ require_once __DIR__ . '/../components/header.php';
             <div class="hero-label hero-label-top">BEAUTY / MAKEUP</div>
             <div class="hero-product">
                 <div class="hero-product-shadow"></div>
-                <div class="hero-product-box">
-                    <span>GLAM</span>
-                    <strong>BEAUTY</strong>
-                    <small>MAKEUP COLLECTION</small>
-                </div>
+                <img class="hero-product-logo"
+                     src="<?= GLAM_FRONTEND_URL ?>/../images/logo.jpg"
+                     alt="Logo de E'vora Digital">
             </div>
             <div class="hero-label hero-label-bottom">EST. 2026</div>
         </div>

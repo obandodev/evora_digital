@@ -31,8 +31,8 @@ require_once __DIR__ . '/../config/app.php';
             href="<?= GLAM_FRONTEND_URL ?>/pages/home.php"
             class="brand"
         >
-            <span class="brand-mark">G</span>
-            <span class="brand-name">Glam Beauty</span>
+            <span class="brand-mark">E</span>
+            <span class="brand-name">E'vora Digital</span>
         </a>
 
         <nav class="main-nav">
