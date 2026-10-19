@@ -24,7 +24,7 @@ require_once __DIR__ . '/../config/app.php';
     </script>
 
     <title>
-        Glam Beauty — Administración
+        E'vora Digital — Administración
     </title>
 
     <link
@@ -182,7 +182,7 @@ require_once __DIR__ . '/../config/app.php';
                 <div>
 
                     <span class="admin-topbar-label">
-                        GLAM BEAUTY
+                        E'vora Digital
                     </span>
 
                     <strong>

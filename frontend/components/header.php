@@ -156,7 +156,7 @@ require_once __DIR__ . '/../config/app.php';
         </div>
 
         <span class="stock-modal-eyebrow">
-            GLAM BEAUTY
+            E'vora Digital
         </span>
 
         <h2 id="stock-modal-title">

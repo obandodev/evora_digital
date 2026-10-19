@@ -8,7 +8,7 @@ require_once __DIR__ . '/../../../../components/admin-header.php';
         <div class="admin-page-heading">
             <span class="admin-page-eyebrow">Catálogo</span>
             <h1>Categorías</h1>
-            <p>Organiza las categorías del catálogo de Glam Beauty.</p>
+            <p>Organiza las categorías del catálogo de E'vora Digital.</p>
         </div>
 
         <button

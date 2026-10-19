@@ -7,7 +7,7 @@
         <div>
             <span class="admin-eyebrow">RESUMEN</span>
             <h1>Dashboard</h1>
-            <p>Vista general de la operación de Glam Beauty.</p>
+            <p>Vista general de la operación de E'vora Digital.</p>
         </div>
     </section>
 

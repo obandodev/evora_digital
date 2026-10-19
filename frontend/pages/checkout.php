@@ -7,7 +7,7 @@ require_once __DIR__ . '/../components/header.php';
 
 <main class="checkout-page">
     <section class="checkout-header">
-        <span class="eyebrow">GLAM BEAUTY</span>
+        <span class="eyebrow">E'Vora Digital</span>
         <h1>Finalizar pedido</h1>
         <p>Completa tus datos para realizar tu pedido.</p>
     </section>

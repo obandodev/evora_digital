@@ -15,7 +15,7 @@ require_once __DIR__ . '/../../../../components/admin-header.php';
         <div class="products-page-heading">
             <span class="admin-page-eyebrow">Catálogo</span>
             <h1>Productos</h1>
-            <p>Administra los productos disponibles en Glam Beauty.</p>
+            <p>Administra los productos disponibles en E'vora Digital.</p>
         </div>
 
         <button
