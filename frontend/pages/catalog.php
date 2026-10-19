@@ -8,7 +8,7 @@ require_once __DIR__ . '/../components/header.php';
 <main class="catalog-page">
     <section class="catalog-header">
         <div>
-            <span class="eyebrow">GLAM BEAUTY</span>
+            <span class="eyebrow">E'vora Digital</span>
             <h1>Catálogo</h1>
             <p>
                 Explora nuestra selección de productos de belleza.

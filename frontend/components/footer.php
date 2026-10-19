@@ -4,12 +4,12 @@ require_once __DIR__ . '/../config/app.php';
 
 <footer class="site-footer">
     <div class="footer-brand">
-        <strong>Glam Beauty</strong>
+        <strong>E'vora Digital</strong>
         <span>Belleza que habla por ti.</span>
     </div>
 
     <span class="footer-copy">
-        © <?= date('Y') ?> Glam Beauty
+        © <?= date('Y') ?> E'vora Digital 
     </span>
 </footer>
 

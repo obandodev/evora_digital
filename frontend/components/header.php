@@ -15,7 +15,7 @@ require_once __DIR__ . '/../config/app.php';
             'IMAGE_URL'    => GLAM_IMAGE_URL,
         ], JSON_UNESCAPED_SLASHES) ?>;
     </script>
-    <title>Glam Beauty</title>
+    <title>E'vora Digital </title>
 
     <link rel="stylesheet" href="<?= GLAM_FRONTEND_URL ?>/styles/global.css">
     <link rel="stylesheet" href="<?= GLAM_FRONTEND_URL ?>/styles/header.css">
@@ -114,7 +114,7 @@ require_once __DIR__ . '/../config/app.php';
         </nav>
 
         <div class="mobile-menu-footer">
-            <span>GLAM BEAUTY</span>
+            <span>E'vora Digital</span>
             <span>Belleza que habla por ti.</span>
         </div>
     </div>

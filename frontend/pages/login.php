@@ -8,7 +8,7 @@ require_once __DIR__ . '/../components/header.php';
 <main class="login-page">
     <section class="login-container">
         <div class="login-intro">
-            <span class="eyebrow">GLAM BEAUTY</span>
+            <span class="eyebrow">E'vora Digital</span>
             <h1>Panel<br>administrativo.</h1>
             <p>
                 Gestiona productos, categorías, inventario y pedidos

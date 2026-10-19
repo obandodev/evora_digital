@@ -7,7 +7,7 @@ require_once __DIR__ . '/../components/header.php';
 
 <main class="cart-page">
     <section class="cart-header">
-        <span class="eyebrow">GLAM BEAUTY</span>
+        <span class="eyebrow">E'vora Digital</span>
         <h1>Tu carrito de compras</h1>
         <p>Revisa tus productos antes de continuar.</p>
     </section>

@@ -65,7 +65,7 @@ require_once __DIR__ . '/../config/app.php';
             <div>
 
                 <strong>
-                    Glam Beauty
+                    E'vora Digital
                 </strong>
 
                 <span>
